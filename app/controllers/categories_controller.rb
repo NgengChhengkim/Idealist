@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   def index
     @category_name = t "menus.top30"
     @big_article = Article.select_popular 1, 0
-    # @small_articles = Article.select_popular(29, @big_article.last.id)
+    @small_articles = Article.select_popular(29, @big_article.last.id)
   end
 
   def show

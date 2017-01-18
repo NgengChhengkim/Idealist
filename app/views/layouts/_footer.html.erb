@@ -1,0 +1,13 @@
+<div class="footer">
+  <span class="contact"><%= link_to t("labels.contact"), advertising_path %></span>
+  <span class="copyright">
+    <%= t "labels.copyright" %>
+    <i class="fa fa-copyright"></i>
+    <%= l Time.zone.now, format: :year %>
+    <%= t "labels.brand" %>
+  </span>
+  <%= link_to "https://www.facebook.com/khmertec.ktn?ref=hl",
+    target: "_blank" do %>
+    <i class="fa fa-facebook-square"></i>
+  <% end %>
+</div>

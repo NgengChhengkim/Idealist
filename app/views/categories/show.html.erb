@@ -1,0 +1,16 @@
+<%= provide :title, @category_name %>
+<div class="row">
+  <div class="col-md-8">
+    <h4><%= @category_name %></h4>
+    <% if params[:page].nil? || "1" == params[:page] %>
+      <div class="line"></div>
+      <%= render partial: "big_article", collection: @big_article, as: :article %>
+    <% end %>
+
+    <%= render partial: "small_article", collection: @small_articles, as: :article %>
+    <% if @small_articles.present? %>
+      <%= will_paginate @small_articles %>
+    <% end %>
+  </div>
+  <%= render "right_part" %>
+</div>

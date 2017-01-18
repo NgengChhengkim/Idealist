@@ -1,0 +1,23 @@
+<div class="modal fade" id="popup-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">
+          <%= t "labels.popup_title" %>
+        </h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          <b><%= t "labels.googleplay" %></b><br/>
+          <%= link_to "https://play.google.com/store/apps/details?id=com.angkorvoice.app.angkorvoiceapp", target: "_blank" do %>
+            <%= image_tag "play", width: "32px" %>
+            <%= t "labels.get_now" %>
+          <% end %>
+        </p>
+        <hr>
+        <%= render "shared/fb_like_box" %>
+      </div>
+    </div>
+  </div>
+</div>

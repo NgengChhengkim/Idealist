@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title yield(:title) %></title>
+    <%= stylesheet_link_tag "application", media: "all",
+                                           "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag "logo.png" %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="Zx6Szw4fio6VgfaEd4Zo_dXWGOHsaffFLDTfk2vWIn0" />
+    <meta property="fb:pages" content="415513175131275" />
+    <link href='http://fonts.googleapis.com/css?family=Hanuman' rel='stylesheet' type='text/css'>
+    <%= render "layouts/shim" %>
+    <%= render "layouts/meta" %>
+    <%= render "layouts/fb_meta" %>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-1391132134348179",
+        enable_page_level_ads: true
+      });
+    </script>
+  </head>
+  <body data-no-turbolink="true">
+    <div id="fb-root"></div>
+    <%= render "layouts/header" %>
+    <div class="content container">
+      <div class="row">
+        <div class="col-md-12">
+          <%= render "shared/flash" %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= render "layouts/footer" %>
+    <div><%= render "shared/facebook_popup" %></div>
+  </body>
+</html>

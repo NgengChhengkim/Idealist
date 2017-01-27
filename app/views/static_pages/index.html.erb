@@ -1,2 +1,40 @@
 <%= provide :title, t("menus.home") %>
 <%= render @categories %>
+
+<div class="col-md-4">
+<div class="design">
+<div class="text">
+  រទេស​ទាំង ១២ ​ដែល​​សម្បូរ​ស្រី​ស្អាត តែ​ខ្សត់​មនុស្ស​ប្រុស
+</div>
+</div>
+</div>
+
+<style type="text/css">
+/*  .design:before {
+    transition: all .3s ease;
+  }*/
+  .design{
+    background:linear-gradient(to bottom,transparent 0,transparent 32%,rgba(0,0,0,.85) 79%,rgba(0,0,0,.85) 100%),
+    url('/uploads/article/image/1/A-teacher-told-her-young-class-.jpg');
+    height: 250px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 25%;
+   /* background: linear-gradient(to bottom,transparent 0,transparent 32%,rgba(0,0,0,.85) 79%,rgba(0,0,0,.85) 100%), url("/uploads/article/image/1/bap-ngo.jpg");*/
+
+  }
+
+  .design:hover {
+    background: rgba(0,0,0,.2) !important;
+  }
+
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+  }
+</style>
+

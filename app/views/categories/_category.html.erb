@@ -1,6 +1,6 @@
 <%
   big_article = Article.find_published_articles 1, 0, category.id
-  small_article = Article.find_published_articles 4, 1, category.id
+  small_article = Article.find_published_articles 3, 1, category.id
 %>
 
 <h4>
@@ -9,6 +9,11 @@
 </h4>
 <div class="line"></div>
 <div class="row">
-  <%= render partial: "articles/big_article", collection: big_article, as: :article %>
-  <%= render small_article %>
+  <div class="col-md-7">
+    <%= render partial: "articles/big_article", collection: big_article, as: :article %>
+  </div>
+  <div class="col-md-5">
+    <%= render small_article %>
+  </div>
 </div>
+<br>

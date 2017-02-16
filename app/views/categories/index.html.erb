@@ -1,6 +1,8 @@
 <%= provide :title, @category_name %>
 <div class="row">
   <div class="col-md-8">
+    <%= render "shared/cta_banner" %>
+
     <h4><%= @category_name %></h4>
     <div class="line"></div>
     <%= render partial: "big_article", collection: @big_article, as: :article %>

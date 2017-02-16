@@ -1,15 +1,16 @@
-<div class="big-article">
-  <%= link_to image_tag(article.image_url, class: "img-responsive"), article %>
-  <div class="title">
-    <%= link_to article do %>
+<div class="big-intro">
+  <%= link_to article do %>
+    <%= image_tag(article.image_url, class: "img-responsive") %>
+    <h3 class="title-category">
       <% if article.audio_url? %>
         <i class="fa fa-volume-up"></i>
       <% end %>
       <%= truncate article.title, length: 160 %>
-    <% end %>
-    <p class="post-date">
+    </h3>
+    <div class="post-date">
       <i class="fa fa-clock-o"></i>&nbsp;
       <%= l article.published_at, format: :long %>
-    </p>
-  </div>
+    </div>
+    <div class="mask"></div>
+  <% end %>
 </div>

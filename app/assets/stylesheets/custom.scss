@@ -180,11 +180,34 @@ h5 {
     text-shadow: 1px 1px rgba(0,0,0,.7);
     font-weight: 200;
   }
+
+  .title-category {
+    position: absolute;
+    bottom: 15px;
+    margin: 20px 10px;
+    font-size: 1.5em;
+    color: white;
+    z-index: 2;
+    text-shadow: 1px 1px rgba(0,0,0,.7);
+    font-weight: 200;
+  }
+
   .date{
     position: absolute;
     bottom: 0;
     color: $light-letter-color;
     font-style: italic;
+  }
+
+  .post-date {
+    position: absolute;
+    bottom: 10px;
+    margin: 0px 10px;
+    color: white;
+    font-style: italic;
+    z-index: 2;
+    text-shadow: 1px 1px rgba(0,0,0,.7);
+    font-weight: 200;
   }
 
   .mask {

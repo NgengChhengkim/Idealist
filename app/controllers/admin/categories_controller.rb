@@ -35,7 +35,7 @@ class Admin::CategoriesController < ApplicationController
 
   private
   def category_params
-    params.require(:category).permit :name
+    params.require(:category).permit :name, :sort_order
   end
 
   def find_category_by_params

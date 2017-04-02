@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = Category.order_sort
   end
 
   def google

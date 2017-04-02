@@ -5,7 +5,7 @@
       <p><%= f.label :title %></p>
       <p><%= f.text_field :title, class: "form-control" %></p>
       <p><%= f.label :category %></p>
-      <p><%= f.collection_select :category_id, Category.all, :id, :name, {},
+      <p><%= f.collection_select :category_id, Category.order_sort, :id, :name, {},
         class: "form-control" %></p>
       <p><%= f.label :content %></p>
       <p><%= f.cktext_area :content, ckeditor: {toolbar: :full} %></p>

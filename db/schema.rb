@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151010082006) do
+ActiveRecord::Schema.define(version: 20170402050703) do
 
   create_table "articles", force: :cascade do |t|
     t.text     "title",        limit: 65535
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20151010082006) do
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "sort_order", limit: 4
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|

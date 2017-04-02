@@ -4,6 +4,8 @@
       <%= render "shared/errors_messages", object: @category %>
       <p><%= f.label :name %></p>
       <p><%= f.text_field :name, class: "form-control" %></p>
+      <p><%= f.label :sort_order %></p>
+      <p><%= f.number_field :sort_order, class: "form-control" %></p>
       <hr>
       <%= f.submit t("category.admin.buttons.save"), class: "btn btn-primary pull-right" %>
       <button type="button" class="btn btn-default pull-right btn-close" data-dismiss="modal">

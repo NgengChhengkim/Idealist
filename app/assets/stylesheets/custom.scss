@@ -116,6 +116,11 @@ h5 {
   }
 }
 
+.navbar-fixed-top .navbar-collapse,
+.navbar-fixed-bottom .navbar-collapse {
+  max-height: 370px;
+}
+
 @media (max-width: 1100px) {
     .navbar-header {
         float: none;

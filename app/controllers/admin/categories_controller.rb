@@ -5,7 +5,7 @@ class Admin::CategoriesController < ApplicationController
   before_action :find_category_by_params, only: [:edit, :update, :destroy]
 
   def index
-    @categories = Category.paginate(page: params[:page], per_page: Settings.per_page)
+    @categories = Category.order_sort.paginate(page: params[:page], per_page: Settings.per_page)
   end
 
   def new

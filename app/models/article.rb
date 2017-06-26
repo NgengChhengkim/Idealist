@@ -35,6 +35,8 @@ class Article < ActiveRecord::Base
     .order("view DESC")
     .limit(limit)}
 
+  scope :published_order_desc, ->{published.order published_at: :desc}
+
   after_restore :update_post_status, if: :pending?
 
   def schedule_at_must_greater_than_current_datetime

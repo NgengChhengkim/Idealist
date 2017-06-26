@@ -15,3 +15,7 @@ commit:
   unpublish: "Unpublish"
   schedule: "Schedule"
   preview: "Preview"
+api:
+  top_page:
+    categories:
+      article_list: 10

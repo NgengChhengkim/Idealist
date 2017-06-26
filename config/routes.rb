@@ -27,4 +27,12 @@ Rails.application.routes.draw do
   get "advertising" => "static_pages#advertising"
 
   devise_for :users
+
+  namespace :api do
+    namespace :v1 do
+      namespace :top_page do
+        resources :categories, only: :index
+      end
+    end
+  end
 end

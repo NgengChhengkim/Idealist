@@ -16,6 +16,7 @@ commit:
   schedule: "Schedule"
   preview: "Preview"
 api:
-  top_page:
-    categories:
+  per_page:
+    top_page:
       article_list: 10
+    article_list: 15

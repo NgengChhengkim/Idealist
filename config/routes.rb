@@ -33,6 +33,13 @@ Rails.application.routes.draw do
       namespace :top_page do
         resources :categories, only: :index
       end
+
+      resources :categories, only: :show do
+        resources :articles, only: :index
+      end
+
+      resources :articles, only: :show
+
     end
   end
 end

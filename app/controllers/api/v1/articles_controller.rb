@@ -8,7 +8,7 @@ class Api::V1::ArticlesController < ApiController
       success: true,
       category_name: category.name,
       data: ActiveModel::Serializer::CollectionSerializer.new(
-        articles, serializer: Api::V1::ArticleSerializer
+        articles, serializer: Api::V1::ThumbnailArticleSerializer
       )
     }
   end

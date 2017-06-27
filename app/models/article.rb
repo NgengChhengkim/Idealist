@@ -10,6 +10,8 @@ class Article < ActiveRecord::Base
   validates :image, presence: true
   validate :schedule_at_must_greater_than_current_datetime
 
+  delegate :name, to: :category, allow_nil: true, prefix: true
+
   scope :on_schedule, ->{where("schedule_at <= ? and post_status = ?",
     Time.zone.now, Settings.post_status.pending)}
   scope :draft, ->{where post_status: Settings.post_status.draft}

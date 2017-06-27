@@ -1,5 +1,13 @@
-class Api::V1::TopPage::CategorySerializer < Api::V1::CategorySerializer
-  attributes :articles
+class Api::V1::TopPage::CategorySerializer < ActiveModel::Serializer
+  attributes :data
+
+  def data
+    [{
+      key: object.id,
+      name: object.name,
+      articles: articles
+    }]
+  end
 
   def articles
     ActiveModel::Serializer::CollectionSerializer.new(

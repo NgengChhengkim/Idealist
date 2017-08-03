@@ -32,9 +32,14 @@ Rails.application.routes.draw do
     namespace :v1 do
       namespace :top_page do
         resources :categories, only: :index
+        resources :articles, only: :index
       end
 
       resources :categories, only: :show do
+        resources :articles, only: :index
+      end
+
+      namespace :popular do
         resources :articles, only: :index
       end
 

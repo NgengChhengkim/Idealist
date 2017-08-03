@@ -38,6 +38,7 @@ class Article < ActiveRecord::Base
     .limit(limit)}
 
   scope :published_order_desc, ->{published.order published_at: :desc}
+  scope :popular, -> {published.order view: :desc}
 
   after_restore :update_post_status, if: :pending?
 

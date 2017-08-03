@@ -38,6 +38,7 @@ class Article < ActiveRecord::Base
     .limit(limit)}
 
   scope :published_order_desc, ->{published.order published_at: :desc}
+  scope :except_ids, -> ids {where.not id: ids}
 
   after_restore :update_post_status, if: :pending?
 

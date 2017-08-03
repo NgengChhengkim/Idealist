@@ -19,4 +19,5 @@ api:
   per_page:
     top_page:
       article_list: 10
+      latest_list: 20
     article_list: 15

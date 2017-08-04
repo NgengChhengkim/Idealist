@@ -32,6 +32,8 @@ class Api::V1::ArticlesController < ApiController
     article = Article.find params[:id]
     category = article.category
 
+    article.update_view_number
+
     render json: {
       success: true,
       data: Api::V1::ArticleDetailSerializer.new(article)

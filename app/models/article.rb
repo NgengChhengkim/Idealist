@@ -19,15 +19,15 @@ class Article < ActiveRecord::Base
   scope :published, ->{where post_status: Settings.post_status.published}
 
   scope :find_published_articles, ->limit, offset, category_id{
-    joins(:category).where("post_status = ? AND category_id = ?",
-        Settings.post_status.published, category_id)
-      .order("published_at DESC")
-      .limit(limit)
-      .offset(offset)
+    where("post_status = ? AND category_id = ?",
+      Settings.post_status.published, category_id)
+    .order("published_at DESC")
+    .limit(limit)
+    .offset(offset)
   }
 
   scope :find_similar_articles, ->limit, except, category_id{
-    joins(:category).where("post_status = ? AND category_id = ? AND articles.id <> ?",
+    where("post_status = ? AND category_id = ? AND articles.id <> ?",
       Settings.post_status.published, category_id, except)
     .order("published_at DESC")
     .limit(limit)}
@@ -39,6 +39,7 @@ class Article < ActiveRecord::Base
 
   scope :published_order_desc, ->{published.order published_at: :desc}
   scope :popular, -> {published.order view: :desc}
+  scope :except_id, -> id {where.not id: id}
 
   after_restore :update_post_status, if: :pending?
 

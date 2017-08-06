@@ -32,11 +32,17 @@ class Api::V1::ArticlesController < ApiController
     article = Article.find params[:id]
     category = article.category
 
+    related_articles = category.articles.published_order_desc
+      .except_id(params[:id]).limit Settings.api.per_page.related_articles
+
     article.update_view_number
 
     render json: {
       success: true,
-      data: Api::V1::ArticleDetailSerializer.new(article)
+      data: Api::V1::ArticleDetailSerializer.new(article),
+      related_articles: ActiveModel::Serializer::CollectionSerializer.new(
+        related_articles, serializer: Api::V1::ThumbnailArticleSerializer
+      )
     }
   end
 

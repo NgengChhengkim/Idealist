@@ -22,3 +22,4 @@ api:
       latest_list: 20
     article_list: 15
     popular_list: 30
+    related_articles: 10

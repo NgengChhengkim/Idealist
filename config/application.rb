@@ -24,5 +24,6 @@ module Angkorvoice
     config.active_record.raise_in_transactional_callbacks = true
     config.time_zone = "Hanoi"
     config.active_record.default_timezone = :local
+    config.eager_load_paths += %W(#{config.root}/lib)
   end
 end

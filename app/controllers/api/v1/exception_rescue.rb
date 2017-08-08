@@ -6,8 +6,6 @@ module Api::V1::ExceptionRescue
   end
 
   def render_invalid_token_message
-    render json: {
-      message: "Invalid token."
-    }
+    render json: {message: "Invalid token."}, status: :bad_request
   end
 end

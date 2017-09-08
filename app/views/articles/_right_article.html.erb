@@ -1,10 +1,5 @@
 <%= render "shared/fb_like_box" %>
 
-<%= link_to "https://play.google.com/store/apps/details?id=com.angkorvoice.app.angkorvoiceapp",
-  target: "_blank", title: t("labels.get_google_play") do  %>
-  <%= image_tag "googleplay", class: "img-responsive" %>
-<% end %>
-
 <div class="similar-article">
   <h3><b><%= t "labels.similar_articles" %></b></h3>
   <%= render partial: "small_right_article", collection: @articles, as: :article %>

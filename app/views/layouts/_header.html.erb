@@ -14,11 +14,6 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <%= link_to "https://play.google.com/store/apps/details?id=com.angkorvoice.app.angkorvoiceapp", title: t("labels.get_google_play"), target: "_blank" do %>
-            <%= image_tag "play", class: "img-responsive", width: "20px" %>
-          <% end %>
-        </li>
         <li><%= link_to t("menus.home"), root_path %></li>
         <li><%= link_to t("menus.top30"), popular_path %></li>
         <%= render partial: "layouts/menu", collection: Category.order_sort, as: :category %>
